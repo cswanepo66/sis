@@ -1,15 +1,15 @@
-package studentinfo;
+package sis.studentinfo;
 
 import java.util.*;
 
-class CourseSession {
+public class CourseSession {
     private String department;
     private String number;
     private ArrayList<Student> students =
             new java.util.ArrayList<Student>();
     private Date startDate;
 
-    CourseSession(String department, String number, Date startDate) {
+    public CourseSession(String department, String number, Date startDate) {
         this.department = department;
         this.number = number;
         this.startDate = startDate;
@@ -31,7 +31,7 @@ class CourseSession {
         return students.size();
     }
 
-    void enroll(Student student) {
+    public void enroll(Student student) {
         students.add(student);
     }
 
@@ -45,6 +45,10 @@ class CourseSession {
         int numberOfDays = 16 * 7 - 3;  //weeks * days per week - 3 days
         calendar.add(Calendar.DAY_OF_YEAR, numberOfDays);
         return calendar.getTime();
+    }
+
+    public ArrayList<Student> getAllStudents() {
+        return students;
     }
 
 }
